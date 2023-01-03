@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "- //W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:widget="http://www.netvibes.com/ns/">
+<head>
+	<meta charset="UTF-8" />
+	<title>Simulation Object</title>
+	
+	<meta name="author" content="jai2" />
+	<meta name="description" content="Simulation" />
+	<meta name="apiVersion" content="1.3" />
+	<meta name="debugMode" content="false" />
+	<meta name="strictMode" content="false" />
+	<meta name="autoRefresh" content="0" />
+	
+	<!-- Application Standalone emulation files -->
+	<link rel="stylesheet" type="text/css" href="../c/UWA/assets/css/standalone.css" />
+	<script type="text/javascript" src="../c/UWA/js/UWA_Standalone_Alone.js"></script>
+	
+	<link rel="stylesheet" type="text/css" href="../UIKIT/UIKIT.css" />
+	<script src="../UIKIT/UIKIT.js"></script>
+
+	<!-- <link rel="stylesheet" type="text/css" href="https://dsxdev-online.dsone.3ds.com/devrun/webapps/UIKITPreview/UIKITPreview.css" />  -->
+	<link rel="stylesheet" type="text/css" href="css/Simulation.css" />
+	<!-- Other Scripts
+	<script type="text/javascript" src="../UWA2/js/Drivers/jQuery.js"></script>
+	-->
+	<script type="text/javascript" src="scripts/jquery-1.11.1.js"></script>
+	<script type="text/javascript" src="scripts/uuid-random.min.js"></script>
+	
+	
+            
+	<!-- Application Preferences -->
+	
+  <widget:preferences>
+			<widget:preference name="RunStatus_Template" type="list" label="Run Status" onchange="onTypeSelection" defaultValue="...">
+					<widget:option label="..." value="..." />
+					<widget:option label="Completed" value="Completed" />
+					<widget:option label="Aborted" value="Aborted" />
+					<widget:option label="Failed" value="Failed" />
+					<widget:option label="Running" value="Running" />			
+				</widget:preference> 
+	</widget:preferences>   
+
+	<script type="text/javascript"> 
+
+	   require(
+	   [
+	    'DS/Simulation/scripts/Simulation'
+	   
+	   ], function (
+		Simulation
+	  
+	   ) {
+			
+		widget.addEvents({
+		 onLoad : function() {
+			Simulation.display();
+        },
+       onTypeSelection:Simulation.onTypeSelection
+		
+        });
+		  });
+	
+	</script>
+	
+</head>
+<body>
+<div id="header" style="display : flex;">
+	<!--<div id="icon">
+		<img src="https://vdemopro526dsy.extranet.3ds.com/3DSpace/webapps/Bio_Product/assets/images/bio_Product.png" alt="Simulation Product">
+	</div>
+	<h2 style="color:#005686;" id="widgetHeader"><u>Simulation Objects</u></h2>  -->
+</div>
+
+	<nav  class="tab tab-pills" id="Biovia">
+			<a  class="tab-item" id="product">Simulation Object List</a>
+			<!-- <a class="tab-item" id="protocol">Bio Protocol</a>  -->
+	</nav>
+
+	<!--<section style="display: flex; justify-content: center;" id="got-bios">-->
+		<section style="align:center;" id="Biovia-bios">
+			<section  class="hideBio" id="Bio_Product">
+			
+	<!--	</section>	<section class="hideBio" id="Bio_Protocol"> </section>	  -->
+			
+		</section>
+
+</body>
+</html>
